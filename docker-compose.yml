@@ -1,8 +1,8 @@
-version: '3'
+version: "3"
 
 services:
   notifine-bot:
-    container_name: '${COMPOSE_PROJECT_NAME}-notifine-bot'
+    container_name: "${COMPOSE_PROJECT_NAME}-notifine-bot"
     build: .
     restart: unless-stopped
     networks:
@@ -20,7 +20,7 @@ services:
       - 8080
 
   notifine-db:
-    container_name: '${COMPOSE_PROJECT_NAME}-notifine-db'
+    container_name: "${COMPOSE_PROJECT_NAME}-notifine-db"
     image: postgres:11
     restart: unless-stopped
     networks:
