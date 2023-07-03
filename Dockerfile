@@ -4,7 +4,7 @@ RUN cargo build --release
 
 FROM debian:bullseye-slim
 EXPOSE 8080
-RUN apt-get update && apt-get install postgresql -y
+RUN apt-get update && apt-get install postgresql ca-certificates -y
 COPY --from=builder ./target/release/notifine ./target/release/notifine
 RUN chmod +x ./target/release/notifine
 CMD ["/target/release/notifine"]
